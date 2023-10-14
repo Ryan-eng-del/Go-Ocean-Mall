@@ -1,0 +1,6 @@
+jwt:
+  sign_key: "Elian"
+
+redis:
+  host: "localhost"
+  port: "6380"
