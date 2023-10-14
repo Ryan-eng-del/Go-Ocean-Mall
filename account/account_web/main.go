@@ -4,7 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"ocean_mall/account_web/handler"
+	"ocean_mall/account/account_web/handler"
 )
 
 func main() {
@@ -19,6 +19,7 @@ func main() {
 
 	{
 		accountGroup.GET("/list", handler.AccountListHandler)
+		accountGroup.POST("/login", handler.LoginByPassword)
 	}
 
 	r.Run(addr)

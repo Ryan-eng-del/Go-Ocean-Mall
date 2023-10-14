@@ -7,7 +7,7 @@ import (
 	"gorm.io/gorm/logger"
 	"gorm.io/gorm/schema"
 	"log"
-	"ocean_mall/account_srv/model"
+	"ocean_mall/account/account_srv/model"
 	"os"
 	"time"
 )

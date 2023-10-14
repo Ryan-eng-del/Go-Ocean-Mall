@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"google.golang.org/grpc"
 	"net"
-	"ocean_mall/account_srv/biz"
-	"ocean_mall/account_srv/internal"
-	"ocean_mall/account_srv/proto/pb"
+	"ocean_mall/account/account_srv/biz"
+	"ocean_mall/account/account_srv/internal"
+	"ocean_mall/account/account_srv/proto/pb"
 )
 
 func main() {
@@ -15,6 +15,7 @@ func main() {
 	port := flag.Int("port", 9095, "输入端口")
 	flag.Parse()
 	internal.InitDB()
+	internal.InitRedis()
 	addr := fmt.Sprintf("%s:%d", *ip, *port)
 	server := grpc.NewServer()
 	pb.RegisterAccountServiceServer(server, &biz.AccountService{})

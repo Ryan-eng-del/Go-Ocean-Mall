@@ -6,14 +6,14 @@ import (
 	"errors"
 	"github.com/anaskhan96/go-password-encoder"
 	"gorm.io/gorm"
-	"ocean_mall/account_srv/internal"
-	"ocean_mall/account_srv/model"
-	"ocean_mall/account_srv/proto/pb"
-	"ocean_mall/exception"
+	"ocean_mall/account/account_srv/internal"
+	"ocean_mall/account/account_srv/model"
+	pb2 "ocean_mall/account/account_srv/proto/pb"
+	"ocean_mall/account/exception"
 )
 
 type AccountService struct {
-	pb.UnimplementedAccountServiceServer
+	pb2.UnimplementedAccountServiceServer
 }
 
 func Paginate(page, pageSize int) func(db *gorm.DB) *gorm.DB {
@@ -34,13 +34,13 @@ func Paginate(page, pageSize int) func(db *gorm.DB) *gorm.DB {
 	}
 }
 
-func (a AccountService) GetAccountList(ctx context.Context, request *pb.PagingRequest) (*pb.AccountListRes, error) {
+func (a AccountService) GetAccountList(ctx context.Context, request *pb2.PagingRequest) (*pb2.AccountListRes, error) {
 	var accountList []model.Account
 	result := internal.DB.Scopes(Paginate(int(request.Page), int(request.PageSize))).Find(&accountList)
 	if result.Error != nil {
 		return nil, result.Error
 	}
-	accountListRes := &pb.AccountListRes{}
+	accountListRes := &pb2.AccountListRes{}
 	accountListRes.Total = int32(result.RowsAffected)
 	for _, account := range accountList {
 		accountRes := ModelToPb(account)
@@ -50,8 +50,8 @@ func (a AccountService) GetAccountList(ctx context.Context, request *pb.PagingRe
 	return accountListRes, nil
 }
 
-func ModelToPb(account model.Account) *pb.AccountRes {
-	accountRes := &pb.AccountRes{
+func ModelToPb(account model.Account) *pb2.AccountRes {
+	accountRes := &pb2.AccountRes{
 		Id:       int32(account.ID),
 		Mobile:   account.Mobile,
 		Password: account.Password,
@@ -62,7 +62,7 @@ func ModelToPb(account model.Account) *pb.AccountRes {
 	return accountRes
 }
 
-func (a AccountService) GetAccountByMobile(ctx context.Context, request *pb.MobileRequest) (*pb.AccountRes, error) {
+func (a AccountService) GetAccountByMobile(ctx context.Context, request *pb2.MobileRequest) (*pb2.AccountRes, error) {
 	var account model.Account
 
 	result := internal.DB.Where(&model.Account{Mobile: request.Mobile}).First(&account)
@@ -74,7 +74,7 @@ func (a AccountService) GetAccountByMobile(ctx context.Context, request *pb.Mobi
 	return res, nil
 }
 
-func (a AccountService) GetAccountById(ctx context.Context, request *pb.IdRequest) (*pb.AccountRes, error) {
+func (a AccountService) GetAccountById(ctx context.Context, request *pb2.IdRequest) (*pb2.AccountRes, error) {
 	var account model.Account
 
 	result := internal.DB.First(&account, request.Id)
@@ -87,7 +87,7 @@ func (a AccountService) GetAccountById(ctx context.Context, request *pb.IdReques
 	return res, nil
 }
 
-func (a AccountService) AddAccount(ctx context.Context, request *pb.AddAccountRequest) (*pb.AccountRes, error) {
+func (a AccountService) AddAccount(ctx context.Context, request *pb2.AddAccountRequest) (*pb2.AccountRes, error) {
 	var account model.Account
 
 	result := internal.DB.Where(&model.Account{
@@ -122,7 +122,7 @@ func (a AccountService) AddAccount(ctx context.Context, request *pb.AddAccountRe
 	return accountRes, nil
 }
 
-func (a AccountService) UpdateAccount(ctx context.Context, request *pb.UpdateAccountRequest) (*pb.UpdateAccountRes, error) {
+func (a AccountService) UpdateAccount(ctx context.Context, request *pb2.UpdateAccountRequest) (*pb2.UpdateAccountRes, error) {
 	var account model.Account
 
 	result := internal.DB.First(&account, request.Id)
@@ -141,12 +141,12 @@ func (a AccountService) UpdateAccount(ctx context.Context, request *pb.UpdateAcc
 		return nil, errors.New(exception.InternalError)
 	}
 
-	return &pb.UpdateAccountRes{
+	return &pb2.UpdateAccountRes{
 		Result: true,
 	}, nil
 }
 
-func (a AccountService) CheckPassword(ctx context.Context, request *pb.CheckPasswordRequest) (*pb.CheckPasswordRes, error) {
+func (a AccountService) CheckPassword(ctx context.Context, request *pb2.CheckPasswordRequest) (*pb2.CheckPasswordRes, error) {
 	var account model.Account
 
 	result := internal.DB.First(&account, request.Id)
@@ -168,7 +168,7 @@ func (a AccountService) CheckPassword(ctx context.Context, request *pb.CheckPass
 
 	r := password.Verify(request.Password, account.Salt, account.Password, &options)
 
-	return &pb.CheckPasswordRes{
+	return &pb2.CheckPasswordRes{
 		Result: r,
 	}, nil
 }

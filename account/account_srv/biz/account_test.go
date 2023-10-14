@@ -3,8 +3,8 @@ package biz
 import (
 	"context"
 	"fmt"
-	"ocean_mall/account_srv/internal"
-	"ocean_mall/account_srv/proto/pb"
+	"ocean_mall/account/account_srv/internal"
+	"ocean_mall/account/account_srv/proto/pb"
 	"testing"
 )
 

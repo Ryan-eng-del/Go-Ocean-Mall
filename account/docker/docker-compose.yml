@@ -1,0 +1,60 @@
+version: '3.7'
+services:
+  db:
+    image: mysql:8
+    restart: always
+    container_name: "docker_mysql_8"
+    environment:
+      MYSQL_ROOT_PASSWORD: "123456"
+      MYSQL_DATABASE: ocean_mall
+    volumes:
+      - "../../volumes/db_volume:/var/lib/mysql"
+    expose:
+      - "3307"
+    ports:
+      - "3307:3306"
+    command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
+  cache:
+    image: redis:6.2
+    restart: always
+    ports:
+      - '6380:6379'
+    expose:
+      - "6380"
+    command: ["redis-server", "--save 20 1", "--loglevel warning" ,"--requirepass 123456"]
+    volumes:
+      - "../../volumes/redis_volume:/data"
+  consul1:
+    image: consul:1.15
+    container_name: consul_server1
+    restart: always
+    command: agent -server -client=0.0.0.0 -bootstrap-expect=3 -node=consul_server1
+    volumes:
+      - "../../volumes/consul_volume/consul1/data:/consul/data"
+      - "../../volumes/consul_volume/consul1/config:/consul/config"
+  consul2:
+    image: consul:1.15
+    container_name: consul_server2
+    restart: always
+    command: agent -server -client=0.0.0.0 -retry-join=consul_server1 -node=consul_server2
+    volumes:
+      - "../../volumes/consul_volume/consul2/data:/consul/data"
+      - "../../volumes/consul_volume/consul2/config:/consul/config"
+  consul3:
+    image: consul:1.15
+    container_name: consul_server3
+    restart: always
+    command: agent -server -client=0.0.0.0 -retry-join=consul_server1 -node=consul_server3
+    volumes:
+      - "../../volumes/consul_volume/consul3/data:/consul/data"
+      - "../../volumes/consul_volume/consul3/config:/consul/config"
+  consul4:
+    image: consul:1.15
+    container_name: consul_client
+    restart: always
+    ports:
+      - "8500:8500"
+    command: agent -client=0.0.0.0 -retry-join=consul_server1 -ui -node=consul_client
+    volumes:
+      - "../../volumes/consul_volume/consul4/data:/consul/data"
+      - "../../volumes/consul_volume/consul4/config:/consul/config"
