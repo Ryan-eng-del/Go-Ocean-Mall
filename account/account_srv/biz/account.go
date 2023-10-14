@@ -6,10 +6,10 @@ import (
 	"errors"
 	"github.com/anaskhan96/go-password-encoder"
 	"gorm.io/gorm"
-	"ocean_mall/account/account_srv/internal"
 	"ocean_mall/account/account_srv/model"
 	pb2 "ocean_mall/account/account_srv/proto/pb"
 	"ocean_mall/account/exception"
+	"ocean_mall/account/internal"
 )
 
 type AccountService struct {

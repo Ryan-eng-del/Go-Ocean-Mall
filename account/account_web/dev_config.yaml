@@ -1,6 +1,14 @@
 jwt:
   sign_key: "Elian"
 
-redis:
+consul:
   host: "localhost"
-  port: "6380"
+  port: "8500"
+
+account_web:
+  srvName: "account_web"
+  host: "localhost"
+  port: "8085"
+  tags:
+    - ocean_mall
+    - account_web

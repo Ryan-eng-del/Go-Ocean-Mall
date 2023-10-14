@@ -1,29 +1,5 @@
 version: '3.7'
 services:
-  db:
-    image: mysql:8
-    restart: always
-    container_name: "docker_mysql_8"
-    environment:
-      MYSQL_ROOT_PASSWORD: "123456"
-      MYSQL_DATABASE: ocean_mall
-    volumes:
-      - "../volumes/db_volume:/var/lib/mysql"
-    expose:
-      - "3307"
-    ports:
-      - "3307:3306"
-    command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
-  cache:
-    image: redis:6.2
-    restart: always
-    ports:
-      - '6380:6379'
-    expose:
-      - "6380"
-    command: ["redis-server", "--save 20 1", "--loglevel warning" ,"--requirepass 123456"]
-    volumes:
-      - "../volumes/redis_volume:/data"
   consul1:
     image: consul:1.15
     container_name: consul_server1
