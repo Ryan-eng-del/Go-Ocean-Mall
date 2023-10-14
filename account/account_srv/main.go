@@ -5,10 +5,13 @@ import (
 	"fmt"
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/health"
+	"google.golang.org/grpc/health/grpc_health_v1"
 	"net"
 	"ocean_mall/account/account_srv/biz"
 	"ocean_mall/account/account_srv/proto/pb"
 	internal2 "ocean_mall/account/internal"
+	"strconv"
 )
 
 type AccountSrvConf struct {
@@ -31,7 +34,10 @@ func main() {
 		zap.S().Error("account_srv 启动异常" + err.Error())
 		panic(err)
 	}
+	p, _ := strconv.ParseInt(*port, 10, 32)
+	grpc_health_v1.RegisterHealthServer(server, health.NewServer())
 
+	internal2.Req(*ip, internal2.ViperConf.AccountSrvConf.SrvName, *port, int(p), internal2.ViperConf.AccountSrvConf.Tags, true)
 	err = server.Serve(listen)
 
 	if err != nil {

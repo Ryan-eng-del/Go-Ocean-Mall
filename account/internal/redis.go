@@ -16,6 +16,7 @@ func InitRedis() {
 	h := ViperConf.RedisConfig.Host
 	p := ViperConf.RedisConfig.Port
 	addr := fmt.Sprintf("%s:%d", h, p)
+	fmt.Println(addr, "redis addr")
 	rdb := redis.NewClient(&redis.Options{
 		Addr:     addr,
 		Password: "123456", // no password set
@@ -32,5 +33,5 @@ func InitRedis() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println("key", val)
+	fmt.Println("redis connected", val)
 }

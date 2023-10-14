@@ -26,11 +26,11 @@ services:
       - "../volumes/consul_volume/consul3/config:/consul/config"
   consul4:
     image: consul:1.15
-    container_name: consul_client
+    container_name: consul_server4
     restart: always
     ports:
       - "8500:8500"
-    command: agent -client=0.0.0.0 -retry-join=consul_server1 -ui -node=consul_client
+    command: agent -client=0.0.0.0 -retry-join=consul_server1 -ui -node=consul_server4
     volumes:
       - "../volumes/consul_volume/consul4/data:/consul/data"
       - "../volumes/consul_volume/consul4/config:/consul/config"

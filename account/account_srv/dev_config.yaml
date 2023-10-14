@@ -13,13 +13,13 @@ mysql:
   dbName: "ocean_mall_account"
 
 consul:
-  host: "localhost"
+  host: "192.168.1.6"
   port: "8500"
 
 account_srv:
   srvName: "account_srv"
-  host: "localhost"
+  host: "192.168.1.6"
   port: "9095"
   tags:
     - ocean_mall
-    - account_web
+    - account_srv

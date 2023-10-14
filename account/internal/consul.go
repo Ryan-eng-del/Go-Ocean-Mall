@@ -10,13 +10,14 @@ type ConsulConfig struct {
 	Port int    `mapstructure:"port"`
 }
 
-func Req(host, name, id string, port int, tags []string) error {
+func Req(host, name, id string, port int, tags []string, isGrpc bool) error {
 	config := api.DefaultConfig()
 
 	h := ViperConf.ConsulConfig.Host
 	p := ViperConf.ConsulConfig.Port
 
 	addr := fmt.Sprintf("%s:%d", h, p)
+	fmt.Println(addr, "consul addr")
 	config.Address = addr
 
 	client, err := api.NewClient(config)
@@ -26,18 +27,36 @@ func Req(host, name, id string, port int, tags []string) error {
 	}
 
 	agentServiceRegistration := new(api.AgentServiceRegistration)
-	agentServiceRegistration.Address = config.Address
+	agentServiceRegistration.Address = fmt.Sprintf("%s:%d", host, port)
 	agentServiceRegistration.Port = port
 	agentServiceRegistration.ID = id
 	agentServiceRegistration.Name = name
 	agentServiceRegistration.Tags = tags
-	serverAddr := fmt.Sprintf("http://%s:%d/health", host, port)
+	var serverAddr string
 
-	check := api.AgentServiceCheck{
-		HTTP:                           serverAddr,
-		Timeout:                        "3s",
-		Interval:                       "3s",
-		DeregisterCriticalServiceAfter: "5s",
+	if !isGrpc {
+		serverAddr = fmt.Sprintf("http://%s:%d/health", host, port)
+
+	} else {
+		serverAddr = fmt.Sprintf("%s:%d", host, port)
+	}
+	fmt.Println(serverAddr, "health addr")
+	var check api.AgentServiceCheck
+
+	if !isGrpc {
+		check = api.AgentServiceCheck{
+			HTTP:                           serverAddr,
+			Timeout:                        "3s",
+			Interval:                       "3s",
+			DeregisterCriticalServiceAfter: "10s",
+		}
+	} else {
+		check = api.AgentServiceCheck{
+			GRPC:                           serverAddr,
+			Timeout:                        "3s",
+			Interval:                       "3s",
+			DeregisterCriticalServiceAfter: "10s",
+		}
 	}
 
 	agentServiceRegistration.Check = &check
@@ -75,7 +94,7 @@ func GetServiceList() error {
 	return nil
 }
 
-func FilterService() error {
+func FilterService(serviceName string) (string, error) {
 	config := api.DefaultConfig()
 
 	h := ViperConf.ConsulConfig.Host
@@ -87,19 +106,17 @@ func FilterService() error {
 	client, err := api.NewClient(config)
 
 	if err != nil {
-		return err
+		return "", err
 	}
 
-	services, err := client.Agent().ServicesWithFilter("Service==account_web")
+	services, err := client.Agent().ServicesWithFilter(fmt.Sprintf("Service==%s", serviceName))
 
 	if err != nil {
-		return err
+		return "", err
 	}
-
-	for k, v := range services {
-		fmt.Println(k)
-		fmt.Println(v)
-		fmt.Println("---------------")
+	var addrs string
+	for _, v := range services {
+		addrs = fmt.Sprintf("%s", v.Address)
 	}
-	return nil
+	return addrs, nil
 }

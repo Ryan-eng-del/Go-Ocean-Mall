@@ -12,11 +12,3 @@ account_web:
   tags:
     - ocean_mall
     - account_web
-
-account_srv:
-  srvName: "account_srv"
-  host: "192.168.1.6"
-  port: "9095"
-  tags:
-    - ocean_mall
-    - account_srv

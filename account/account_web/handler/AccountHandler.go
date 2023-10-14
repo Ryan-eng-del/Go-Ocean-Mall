@@ -10,6 +10,7 @@ import (
 	"ocean_mall/account/account_srv/proto/pb"
 	"ocean_mall/account/account_web/req"
 	"ocean_mall/account/account_web/res"
+	"ocean_mall/account/internal"
 	_jwt "ocean_mall/account/jwt"
 	accountLog "ocean_mall/account/log"
 	"strconv"
@@ -77,8 +78,8 @@ func LoginByPassword(c *gin.Context) {
 		})
 		return
 	}
-
-	conn, err := grpc.Dial("127.0.0.1:9095", grpc.WithInsecure())
+	srvAddr, _ := internal.FilterService("account_srv")
+	conn, err := grpc.Dial(srvAddr, grpc.WithInsecure())
 
 	if err != nil {
 		accountLog.Logger.Info(fmt.Sprintf("AccountListHandler-Grpc Dial error:%s", err.Error()))
