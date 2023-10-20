@@ -5,7 +5,10 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v5"
+	_ "github.com/mbobakov/grpc-consul-resolver"
+	"go.uber.org/zap"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials/insecure"
 	"net/http"
 	"ocean_mall/account/account_srv/proto/pb"
 	"ocean_mall/account/account_web/req"
@@ -17,20 +20,36 @@ import (
 	"time"
 )
 
+var client pb.AccountServiceClient
+
+func init() {
+	err := initGrpcClient()
+	if err != nil {
+		panic(err)
+	}
+}
+
+func initGrpcClient() error {
+	addr := fmt.Sprintf("%s:%d", internal.ViperConf.ConsulConfig.Host, internal.ViperConf.ConsulConfig.Port)
+
+	dialAddr := fmt.Sprintf("consul://%s/%s?wait=14s", addr, internal.ViperConf.AccountSrvConf.SrvName)
+	conn, err := grpc.Dial(dialAddr, grpc.WithTransportCredentials(insecure.NewCredentials()),
+		grpc.WithDefaultServiceConfig(`{"loadBalancingPolicy": "round_robin"}`))
+	if err != nil {
+		zap.S().Fatal(err)
+	}
+
+	if err != nil {
+		fmt.Sprintf("拨号失败 %s", addr)
+	}
+
+	client = pb.NewAccountServiceClient(conn)
+	return err
+}
 func AccountListHandler(c *gin.Context) {
 	accountLog.Logger.Info("---- AccountListHandler -----")
 	page := c.DefaultQuery("page", "1")
 	pageNum := c.DefaultQuery("page_size", "10")
-	conn, err := grpc.Dial("127.0.0.1:9095", grpc.WithInsecure())
-
-	if err != nil {
-		accountLog.Logger.Info(fmt.Sprintf("AccountListHandler-Grpc Dial error:%s", err.Error()))
-		c.JSON(http.StatusInternalServerError, gin.H{
-			"msg": err.Error(),
-		})
-	}
-
-	client := pb.NewAccountServiceClient(conn)
 	pageNo, _ := strconv.ParseInt(page, 10, 32)
 	pageSize, _ := strconv.ParseInt(pageNum, 10, 32)
 	fmt.Println(pageNo, pageSize)
@@ -71,26 +90,12 @@ func LoginByPassword(c *gin.Context) {
 	var loginPassword req.LoginByPassword
 
 	err := c.ShouldBind(&loginPassword)
-
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
 			"msg": "参数解析错误",
 		})
 		return
 	}
-	srvAddr, _ := internal.FilterService("account_srv")
-	conn, err := grpc.Dial(srvAddr, grpc.WithInsecure())
-
-	if err != nil {
-		accountLog.Logger.Info(fmt.Sprintf("AccountListHandler-Grpc Dial error:%s", err.Error()))
-		c.JSON(http.StatusInternalServerError, gin.H{
-			"msg": err.Error(),
-		})
-		return
-	}
-
-	client := pb.NewAccountServiceClient(conn)
-
 	r, err := client.GetAccountByMobile(context.Background(), &pb.MobileRequest{
 		Mobile: loginPassword.Mobile,
 	})
