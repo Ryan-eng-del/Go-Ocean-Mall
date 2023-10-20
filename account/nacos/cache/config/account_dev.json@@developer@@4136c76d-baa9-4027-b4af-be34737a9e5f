@@ -1,0 +1,38 @@
+{
+    "jwt": {
+        "sign_key": "Elian"
+    },
+    "consul": {
+        "host": "192.168.2.13",
+        "port": 8500
+    },
+    "redis": {
+        "host": "localhost",
+        "port": 6380
+    },
+    "mysql": {
+        "host": "localhost",
+        "port": "3307",
+        "userName": "root",
+        "Password": "123456",
+        "dbName": "ocean_mall_account"
+    },
+    "account_web": {
+        "srvName": "account_web",
+        "host": "192.168.2.13",
+        "port": "8085",
+        "tags": [
+            "ocean_mall",
+            "account_web"
+        ]
+    },
+    "account_srv": {
+        "srvName": "account_srv",
+        "host": "192.168.2.13",
+        "port": "9095",
+        "tags": [
+            "ocean_mall",
+            "account_srv"
+        ]
+    }
+}

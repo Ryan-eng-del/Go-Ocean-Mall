@@ -3,7 +3,7 @@ package _jwt
 import (
 	"errors"
 	"github.com/golang-jwt/jwt/v5"
-	"ocean_mall/account/conf"
+	"ocean_mall/account/internal"
 	account_log "ocean_mall/account/log"
 	"time"
 )
@@ -28,14 +28,14 @@ type JWT struct {
 
 func NewJWT() *JWT {
 	return &JWT{
-		SignKey: []byte(conf.AppConf.JWTConfig.SignKey),
+		SignKey: []byte(internal.ViperConf.JWTConfig.SignKey),
 	}
 }
 
 func (j *JWT) GenerateJWT(claims CustomClaims) (string, error) {
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
 
-	tokenStr, err := token.SignedString([]byte(conf.AppConf.JWTConfig.SignKey))
+	tokenStr, err := token.SignedString([]byte(internal.ViperConf.JWTConfig.SignKey))
 	if err != nil {
 		panic(err)
 		account_log.Logger.Error("生成 JWT 错误" + err.Error())

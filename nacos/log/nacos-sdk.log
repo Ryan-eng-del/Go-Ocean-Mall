@@ -1,0 +1,149 @@
+2023-10-20T11:17:37.570+0800	DEBUG	rpc/rpc_client.go:290	config-0-9d75e78c-3652-43cd-98f9-533b770c3a79 register server push request:ConfigChangeNotifyRequest handler:ConfigChangeNotifyRequestHandler
+2023-10-20T11:17:37.581+0800	DEBUG	rpc/rpc_client.go:290	config-0-9d75e78c-3652-43cd-98f9-533b770c3a79 register server push request:ConnectResetRequest handler:ConnectResetRequestHandler
+2023-10-20T11:17:37.581+0800	DEBUG	rpc/rpc_client.go:290	config-0-9d75e78c-3652-43cd-98f9-533b770c3a79 register server push request:ClientDetectionRequest handler:ClientDetectionRequestHandler
+2023-10-20T11:17:37.581+0800	INFO	rpc/rpc_client.go:224	[RpcClient.Start] config-0-9d75e78c-3652-43cd-98f9-533b770c3a79 try to connect to server on start up, server: {serverIp:192.168.1.6 serverPort:8848 serverGrpcPort:9848}
+2023-10-20T11:17:37.639+0800	INFO	util/common.go:96	Local IP:172.27.0.1
+2023-10-20T11:17:40.584+0800	WARN	rpc/rpc_client.go:226	[RpcClient.Start] config-0-9d75e78c-3652-43cd-98f9-533b770c3a79 fail to connect to server on start up, error message=server check request failed , err:rpc error: code = DeadlineExceeded desc = context deadline exceeded, start up retry times left=2
+2023-10-20T11:17:40.584+0800	INFO	rpc/rpc_client.go:224	[RpcClient.Start] config-0-9d75e78c-3652-43cd-98f9-533b770c3a79 try to connect to server on start up, server: {serverIp:192.168.1.6 serverPort:8848 serverGrpcPort:9848}
+2023-10-20T11:17:43.589+0800	WARN	rpc/rpc_client.go:226	[RpcClient.Start] config-0-9d75e78c-3652-43cd-98f9-533b770c3a79 fail to connect to server on start up, error message=server check request failed , err:rpc error: code = DeadlineExceeded desc = context deadline exceeded, start up retry times left=1
+2023-10-20T11:17:43.589+0800	INFO	rpc/rpc_client.go:224	[RpcClient.Start] config-0-9d75e78c-3652-43cd-98f9-533b770c3a79 try to connect to server on start up, server: {serverIp:192.168.1.6 serverPort:8848 serverGrpcPort:9848}
+2023-10-20T11:17:49.506+0800	DEBUG	rpc/rpc_client.go:290	config-0-f73f0260-6378-4bb8-bebc-62b1949ab930 register server push request:ConfigChangeNotifyRequest handler:ConfigChangeNotifyRequestHandler
+2023-10-20T11:17:49.519+0800	DEBUG	rpc/rpc_client.go:290	config-0-f73f0260-6378-4bb8-bebc-62b1949ab930 register server push request:ConnectResetRequest handler:ConnectResetRequestHandler
+2023-10-20T11:17:49.519+0800	DEBUG	rpc/rpc_client.go:290	config-0-f73f0260-6378-4bb8-bebc-62b1949ab930 register server push request:ClientDetectionRequest handler:ClientDetectionRequestHandler
+2023-10-20T11:17:49.519+0800	INFO	rpc/rpc_client.go:224	[RpcClient.Start] config-0-f73f0260-6378-4bb8-bebc-62b1949ab930 try to connect to server on start up, server: {serverIp:192.168.1.6 serverPort:8848 serverGrpcPort:9848}
+2023-10-20T11:17:49.575+0800	INFO	util/common.go:96	Local IP:172.27.0.1
+2023-10-20T11:17:52.532+0800	WARN	rpc/rpc_client.go:226	[RpcClient.Start] config-0-f73f0260-6378-4bb8-bebc-62b1949ab930 fail to connect to server on start up, error message=server check request failed , err:rpc error: code = DeadlineExceeded desc = context deadline exceeded, start up retry times left=2
+2023-10-20T11:17:52.532+0800	INFO	rpc/rpc_client.go:224	[RpcClient.Start] config-0-f73f0260-6378-4bb8-bebc-62b1949ab930 try to connect to server on start up, server: {serverIp:192.168.1.6 serverPort:8848 serverGrpcPort:9848}
+2023-10-20T11:17:55.532+0800	WARN	rpc/rpc_client.go:226	[RpcClient.Start] config-0-f73f0260-6378-4bb8-bebc-62b1949ab930 fail to connect to server on start up, error message=server check request failed , err:rpc error: code = DeadlineExceeded desc = context deadline exceeded, start up retry times left=1
+2023-10-20T11:17:55.533+0800	INFO	rpc/rpc_client.go:224	[RpcClient.Start] config-0-f73f0260-6378-4bb8-bebc-62b1949ab930 try to connect to server on start up, server: {serverIp:192.168.1.6 serverPort:8848 serverGrpcPort:9848}
+2023-10-20T11:17:58.545+0800	WARN	rpc/rpc_client.go:226	[RpcClient.Start] config-0-f73f0260-6378-4bb8-bebc-62b1949ab930 fail to connect to server on start up, error message=server check request failed , err:rpc error: code = DeadlineExceeded desc = context deadline exceeded, start up retry times left=0
+2023-10-20T11:17:58.545+0800	INFO	rpc/rpc_client.go:322	config-0-f73f0260-6378-4bb8-bebc-62b1949ab930 try to re connect to a new server, server is not appointed, will choose a random server.
+2023-10-20T11:17:58.545+0800	ERROR	rpc/rpc_client.go:522	Send request fail, request=ConfigQueryRequest, body={"requestId":"","group":"developer","dataId":"account_dev.yaml","tenant":"4136c76d-baa9-4027-b4af-be34737a9e5f","module":"config","tag":""}, retryTimes=0, error=client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	D:/coding/environment/goworks/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/common/remote/rpc/rpc_client.go:487
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).requestProxy
+	D:/coding/environment/goworks/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/clients/config_client/config_proxy.go:64
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).queryConfig
+	D:/coding/environment/goworks/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/clients/config_client/config_proxy.go:116
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).getConfigInner
+	D:/coding/environment/goworks/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/clients/config_client/config_client.go:204
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).GetConfig
+	D:/coding/environment/goworks/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/clients/config_client/config_client.go:148
+main.main
+	D:/coding/webProject/go-ocean-mall/account/config_center/main.go:30
+runtime.main
+	D:/coding/environment/go/src/runtime/proc.go:250
+runtime.goexit
+	D:/coding/environment/go/src/runtime/asm_amd64.s:1594
+2023-10-20T11:17:58.654+0800	ERROR	rpc/rpc_client.go:522	Send request fail, request=ConfigQueryRequest, body={"requestId":"","group":"developer","dataId":"account_dev.yaml","tenant":"4136c76d-baa9-4027-b4af-be34737a9e5f","module":"config","tag":""}, retryTimes=1, error=client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	D:/coding/environment/goworks/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/common/remote/rpc/rpc_client.go:487
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).requestProxy
+	D:/coding/environment/goworks/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/clients/config_client/config_proxy.go:64
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).queryConfig
+	D:/coding/environment/goworks/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/clients/config_client/config_proxy.go:116
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).getConfigInner
+	D:/coding/environment/goworks/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/clients/config_client/config_client.go:204
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).GetConfig
+	D:/coding/environment/goworks/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/clients/config_client/config_client.go:148
+main.main
+	D:/coding/webProject/go-ocean-mall/account/config_center/main.go:30
+runtime.main
+	D:/coding/environment/go/src/runtime/proc.go:250
+runtime.goexit
+	D:/coding/environment/go/src/runtime/asm_amd64.s:1594
+2023-10-20T11:17:58.765+0800	ERROR	rpc/rpc_client.go:522	Send request fail, request=ConfigQueryRequest, body={"requestId":"","group":"developer","dataId":"account_dev.yaml","tenant":"4136c76d-baa9-4027-b4af-be34737a9e5f","module":"config","tag":""}, retryTimes=2, error=client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	D:/coding/environment/goworks/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/common/remote/rpc/rpc_client.go:487
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).requestProxy
+	D:/coding/environment/goworks/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/clients/config_client/config_proxy.go:64
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).queryConfig
+	D:/coding/environment/goworks/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/clients/config_client/config_proxy.go:116
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).getConfigInner
+	D:/coding/environment/goworks/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/clients/config_client/config_client.go:204
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).GetConfig
+	D:/coding/environment/goworks/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/clients/config_client/config_client.go:148
+main.main
+	D:/coding/webProject/go-ocean-mall/account/config_center/main.go:30
+runtime.main
+	D:/coding/environment/go/src/runtime/proc.go:250
+runtime.goexit
+	D:/coding/environment/go/src/runtime/asm_amd64.s:1594
+2023-10-20T11:17:58.872+0800	ERROR	config_client/config_client.go:207	get config from server error:client not connected, current status:STARTING, dataId=account_dev.yaml, group=developer, namespaceId=4136c76d-baa9-4027-b4af-be34737a9e5f
+2023-10-20T11:17:58.874+0800	ERROR	cache/disk_cache.go:101	get config from cache, cacheKey:account_dev.yaml@@developer@@4136c76d-baa9-4027-b4af-be34737a9e5f, cacheDir:nacos/cache\config, error:open nacos/cache\config\account_dev.yaml@@developer@@4136c76d-baa9-4027-b4af-be34737a9e5f: The system cannot find the path specified. 
+2023-10-20T11:18:49.980+0800	DEBUG	rpc/rpc_client.go:290	config-0-e117eec2-bf77-4304-a812-af8ef81c4355 register server push request:ConfigChangeNotifyRequest handler:ConfigChangeNotifyRequestHandler
+2023-10-20T11:18:49.991+0800	DEBUG	rpc/rpc_client.go:290	config-0-e117eec2-bf77-4304-a812-af8ef81c4355 register server push request:ConnectResetRequest handler:ConnectResetRequestHandler
+2023-10-20T11:18:49.991+0800	DEBUG	rpc/rpc_client.go:290	config-0-e117eec2-bf77-4304-a812-af8ef81c4355 register server push request:ClientDetectionRequest handler:ClientDetectionRequestHandler
+2023-10-20T11:18:49.991+0800	INFO	rpc/rpc_client.go:224	[RpcClient.Start] config-0-e117eec2-bf77-4304-a812-af8ef81c4355 try to connect to server on start up, server: {serverIp:192.168.1.6 serverPort:8848 serverGrpcPort:9848}
+2023-10-20T11:18:50.042+0800	INFO	util/common.go:96	Local IP:172.27.0.1
+2023-10-20T11:18:52.996+0800	WARN	rpc/rpc_client.go:226	[RpcClient.Start] config-0-e117eec2-bf77-4304-a812-af8ef81c4355 fail to connect to server on start up, error message=server check request failed , err:rpc error: code = DeadlineExceeded desc = context deadline exceeded, start up retry times left=2
+2023-10-20T11:18:52.996+0800	INFO	rpc/rpc_client.go:224	[RpcClient.Start] config-0-e117eec2-bf77-4304-a812-af8ef81c4355 try to connect to server on start up, server: {serverIp:192.168.1.6 serverPort:8848 serverGrpcPort:9848}
+2023-10-20T11:18:55.998+0800	WARN	rpc/rpc_client.go:226	[RpcClient.Start] config-0-e117eec2-bf77-4304-a812-af8ef81c4355 fail to connect to server on start up, error message=server check request failed , err:rpc error: code = DeadlineExceeded desc = context deadline exceeded, start up retry times left=1
+2023-10-20T11:18:55.998+0800	INFO	rpc/rpc_client.go:224	[RpcClient.Start] config-0-e117eec2-bf77-4304-a812-af8ef81c4355 try to connect to server on start up, server: {serverIp:192.168.1.6 serverPort:8848 serverGrpcPort:9848}
+2023-10-20T11:18:59.001+0800	WARN	rpc/rpc_client.go:226	[RpcClient.Start] config-0-e117eec2-bf77-4304-a812-af8ef81c4355 fail to connect to server on start up, error message=server check request failed , err:rpc error: code = DeadlineExceeded desc = context deadline exceeded, start up retry times left=0
+2023-10-20T11:18:59.001+0800	ERROR	rpc/rpc_client.go:522	Send request fail, request=ConfigQueryRequest, body={"requestId":"","group":"developer","dataId":"account_dev.yaml","tenant":"4136c76d-baa9-4027-b4af-be34737a9e5f","module":"config","tag":""}, retryTimes=0, error=client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	D:/coding/environment/goworks/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/common/remote/rpc/rpc_client.go:487
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).requestProxy
+	D:/coding/environment/goworks/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/clients/config_client/config_proxy.go:64
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).queryConfig
+	D:/coding/environment/goworks/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/clients/config_client/config_proxy.go:116
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).getConfigInner
+	D:/coding/environment/goworks/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/clients/config_client/config_client.go:204
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).GetConfig
+	D:/coding/environment/goworks/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/clients/config_client/config_client.go:148
+main.main
+	D:/coding/webProject/go-ocean-mall/account/config_center/main.go:34
+runtime.main
+	D:/coding/environment/go/src/runtime/proc.go:250
+runtime.goexit
+	D:/coding/environment/go/src/runtime/asm_amd64.s:1594
+2023-10-20T11:18:59.001+0800	INFO	rpc/rpc_client.go:322	config-0-e117eec2-bf77-4304-a812-af8ef81c4355 try to re connect to a new server, server is not appointed, will choose a random server.
+2023-10-20T11:18:59.108+0800	ERROR	rpc/rpc_client.go:522	Send request fail, request=ConfigQueryRequest, body={"requestId":"","group":"developer","dataId":"account_dev.yaml","tenant":"4136c76d-baa9-4027-b4af-be34737a9e5f","module":"config","tag":""}, retryTimes=1, error=client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	D:/coding/environment/goworks/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/common/remote/rpc/rpc_client.go:487
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).requestProxy
+	D:/coding/environment/goworks/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/clients/config_client/config_proxy.go:64
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).queryConfig
+	D:/coding/environment/goworks/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/clients/config_client/config_proxy.go:116
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).getConfigInner
+	D:/coding/environment/goworks/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/clients/config_client/config_client.go:204
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).GetConfig
+	D:/coding/environment/goworks/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/clients/config_client/config_client.go:148
+main.main
+	D:/coding/webProject/go-ocean-mall/account/config_center/main.go:34
+runtime.main
+	D:/coding/environment/go/src/runtime/proc.go:250
+runtime.goexit
+	D:/coding/environment/go/src/runtime/asm_amd64.s:1594
+2023-10-20T11:18:59.216+0800	ERROR	rpc/rpc_client.go:522	Send request fail, request=ConfigQueryRequest, body={"requestId":"","group":"developer","dataId":"account_dev.yaml","tenant":"4136c76d-baa9-4027-b4af-be34737a9e5f","module":"config","tag":""}, retryTimes=2, error=client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	D:/coding/environment/goworks/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/common/remote/rpc/rpc_client.go:487
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).requestProxy
+	D:/coding/environment/goworks/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/clients/config_client/config_proxy.go:64
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).queryConfig
+	D:/coding/environment/goworks/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/clients/config_client/config_proxy.go:116
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).getConfigInner
+	D:/coding/environment/goworks/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/clients/config_client/config_client.go:204
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).GetConfig
+	D:/coding/environment/goworks/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/clients/config_client/config_client.go:148
+main.main
+	D:/coding/webProject/go-ocean-mall/account/config_center/main.go:34
+runtime.main
+	D:/coding/environment/go/src/runtime/proc.go:250
+runtime.goexit
+	D:/coding/environment/go/src/runtime/asm_amd64.s:1594
+2023-10-20T11:18:59.326+0800	ERROR	config_client/config_client.go:207	get config from server error:client not connected, current status:STARTING, dataId=account_dev.yaml, group=developer, namespaceId=4136c76d-baa9-4027-b4af-be34737a9e5f
+2023-10-20T11:18:59.327+0800	ERROR	cache/disk_cache.go:101	get config from cache, cacheKey:account_dev.yaml@@developer@@4136c76d-baa9-4027-b4af-be34737a9e5f, cacheDir:nacos/cache\config, error:open nacos/cache\config\account_dev.yaml@@developer@@4136c76d-baa9-4027-b4af-be34737a9e5f: The system cannot find the path specified. 
+2023-10-20T11:24:41.546+0800	DEBUG	rpc/rpc_client.go:290	config-0-f8dd0b63-f93d-4472-9de7-3ec041ee7d61 register server push request:ConfigChangeNotifyRequest handler:ConfigChangeNotifyRequestHandler
+2023-10-20T11:24:41.557+0800	DEBUG	rpc/rpc_client.go:290	config-0-f8dd0b63-f93d-4472-9de7-3ec041ee7d61 register server push request:ConnectResetRequest handler:ConnectResetRequestHandler
+2023-10-20T11:24:41.557+0800	DEBUG	rpc/rpc_client.go:290	config-0-f8dd0b63-f93d-4472-9de7-3ec041ee7d61 register server push request:ClientDetectionRequest handler:ClientDetectionRequestHandler
+2023-10-20T11:24:41.557+0800	INFO	rpc/rpc_client.go:224	[RpcClient.Start] config-0-f8dd0b63-f93d-4472-9de7-3ec041ee7d61 try to connect to server on start up, server: {serverIp:192.168.2.13 serverPort:8848 serverGrpcPort:9848}
+2023-10-20T11:24:41.612+0800	INFO	util/common.go:96	Local IP:172.27.0.1
+2023-10-20T11:24:41.829+0800	INFO	rpc/rpc_client.go:234	config-0-f8dd0b63-f93d-4472-9de7-3ec041ee7d61 success to connect to server {serverIp:192.168.2.13 serverPort:8848 serverGrpcPort:9848} on start up, connectionId=1697772281607_172.18.0.1_38764
+2023-10-20T11:25:22.163+0800	DEBUG	rpc/rpc_client.go:290	config-0-7dac45e8-fc42-4f52-8109-af8cd4bf9d48 register server push request:ConfigChangeNotifyRequest handler:ConfigChangeNotifyRequestHandler
+2023-10-20T11:25:22.176+0800	DEBUG	rpc/rpc_client.go:290	config-0-7dac45e8-fc42-4f52-8109-af8cd4bf9d48 register server push request:ConnectResetRequest handler:ConnectResetRequestHandler
+2023-10-20T11:25:22.176+0800	DEBUG	rpc/rpc_client.go:290	config-0-7dac45e8-fc42-4f52-8109-af8cd4bf9d48 register server push request:ClientDetectionRequest handler:ClientDetectionRequestHandler
+2023-10-20T11:25:22.176+0800	INFO	rpc/rpc_client.go:224	[RpcClient.Start] config-0-7dac45e8-fc42-4f52-8109-af8cd4bf9d48 try to connect to server on start up, server: {serverIp:192.168.2.13 serverPort:8848 serverGrpcPort:9848}
+2023-10-20T11:25:22.239+0800	INFO	util/common.go:96	Local IP:172.27.0.1
+2023-10-20T11:25:22.349+0800	INFO	rpc/rpc_client.go:234	config-0-7dac45e8-fc42-4f52-8109-af8cd4bf9d48 success to connect to server {serverIp:192.168.2.13 serverPort:8848 serverGrpcPort:9848} on start up, connectionId=1697772322188_172.18.0.1_38804

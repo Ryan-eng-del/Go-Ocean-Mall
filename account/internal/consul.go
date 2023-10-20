@@ -2,12 +2,28 @@ package internal
 
 import (
 	"fmt"
+	"github.com/google/uuid"
 	"github.com/hashicorp/consul/api"
+	"strconv"
 )
 
 type ConsulConfig struct {
-	Host string `mapstructure:"host"`
-	Port int    `mapstructure:"port"`
+	Host string `mapstructure:"host" json:"host"`
+	Port int    `mapstructure:"port" json:"port"`
+}
+
+type AccountSrvConf struct {
+	Host    string   `mapstructure:"host" json:"host"`
+	Port    string   `mapstructure:"port" json:"port"`
+	SrvName string   `mapstructure:"srvName" json:"srvName"`
+	Tags    []string `mapstructure:"tags" json:"tags"`
+}
+
+type AccountWebConf struct {
+	Host    string   `mapstructure:"host" json:"host"`
+	Port    string   `mapstructure:"port" json:"port"`
+	SrvName string   `mapstructure:"srvName" json:"srvName"`
+	Tags    []string `mapstructure:"tags" json:"tags"`
 }
 
 func Req(host, name, id string, port int, tags []string, isGrpc bool) error {
@@ -25,11 +41,12 @@ func Req(host, name, id string, port int, tags []string, isGrpc bool) error {
 	if err != nil {
 		return err
 	}
+	randomUUID := uuid.New().String()
 
 	agentServiceRegistration := new(api.AgentServiceRegistration)
-	agentServiceRegistration.Address = fmt.Sprintf("%s:%d", host, port)
+	agentServiceRegistration.Address = fmt.Sprintf("%s", host)
 	agentServiceRegistration.Port = port
-	agentServiceRegistration.ID = id
+	agentServiceRegistration.ID = "port-" + strconv.Itoa(port) + "-" + randomUUID[0:4]
 	agentServiceRegistration.Name = name
 	agentServiceRegistration.Tags = tags
 	var serverAddr string

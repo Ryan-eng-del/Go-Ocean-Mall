@@ -16,11 +16,11 @@ var DB *gorm.DB
 var err error
 
 type DBConfig struct {
-	Host     string `mapstructure:"host"`
-	Port     string `mapstructure:"port"`
-	DBName   string `mapstructure:"dbName"`
-	UserName string `mapstructure:"userName"`
-	Password string `mapstructure:"password"`
+	Host     string `mapstructure:"host" json:"host"`
+	Port     string `mapstructure:"port" json:"port"`
+	DBName   string `mapstructure:"dbName" json:"dbName"`
+	UserName string `mapstructure:"userName" json:"userName"`
+	Password string `mapstructure:"password" json:"Password"`
 }
 
 func InitDB() {
