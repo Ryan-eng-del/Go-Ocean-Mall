@@ -3,6 +3,7 @@ package internal
 import (
 	"encoding/json"
 	"fmt"
+
 	"github.com/nacos-group/nacos-sdk-go/v2/clients"
 	"github.com/nacos-group/nacos-sdk-go/v2/common/constant"
 	"github.com/nacos-group/nacos-sdk-go/v2/vo"
@@ -35,7 +36,7 @@ func initNacos() {
 
 func initFromNacos() {
 	nacosConfig := NacosConf.NacosConfig
-
+	fmt.Println(nacosConfig, "nacos_config")
 	serverConfigs := []constant.ServerConfig{
 		{IpAddr: nacosConfig.Host, Port: uint64(nacosConfig.Port)},
 	}

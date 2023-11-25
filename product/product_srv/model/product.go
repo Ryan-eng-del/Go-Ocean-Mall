@@ -49,8 +49,8 @@ type Product struct {
 
 	Name        string  `gorm:"type:varchar(64);not null"`
 	SN          string  `gorm:"type:varchar(64);not null"`
-	FavNum      int32   `gorm:"type:int;default:'0'"`
-	SoldNum     int32   `gorm:"type:int;default:'0'"`
+	FavNum      int32   `gorm:"type:int;default:0"`
+	SoldNum     int32   `gorm:"type:int;default:0"`
 	Price       float32 `gorm:"not null"`
 	RealPrice   float32 `gorm:"not null"`
 	ShortDesc   string  `gorm:"type:varchar(256);not null"`
@@ -61,10 +61,10 @@ type Product struct {
 
 type MyList []string
 
-func (l MyList) Value() (driver.Value, error) {
+func (l *MyList) Value() (driver.Value, error) {
 	return json.Marshal(l)
 }
 
-func (l MyList) Scan(v interface{}) error {
+func (l *MyList) Scan(v interface{}) error {
 	return json.Unmarshal(v.([]byte), l)
 }

@@ -52,3 +52,6 @@
 {"level":"info","ts":1697793339.664517,"caller":"handler/AccountHandler.go:50","msg":"---- AccountListHandler -----"}
 {"level":"info","ts":1697793340.6870794,"caller":"handler/AccountHandler.go:50","msg":"---- AccountListHandler -----"}
 {"level":"info","ts":1697793341.3141043,"caller":"handler/AccountHandler.go:50","msg":"---- AccountListHandler -----"}
+{"level":"info","ts":1699177111.017858,"caller":"handler/AccountHandler.go:50","msg":"---- AccountListHandler -----"}
+{"level":"info","ts":1699177961.556007,"caller":"handler/AccountHandler.go:50","msg":"---- AccountListHandler -----"}
+{"level":"info","ts":1699177971.698928,"caller":"handler/AccountHandler.go:62","msg":"AccountListHandler 调用失败: rpc error: code = Unavailable desc = error reading from server: EOF"}

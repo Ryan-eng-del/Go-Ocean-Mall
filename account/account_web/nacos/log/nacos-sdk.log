@@ -264,3 +264,106 @@ runtime.goexit
 2023-10-20T17:18:59.135+0800	INFO	rpc/rpc_client.go:224	[RpcClient.Start] config-0-09c06f9f-831a-43a6-a3fe-a5f77af892d4 try to connect to server on start up, server: {serverIp:192.168.2.13 serverPort:8848 serverGrpcPort:9848}
 2023-10-20T17:18:59.202+0800	INFO	util/common.go:96	Local IP:172.27.0.1
 2023-10-20T17:18:59.308+0800	INFO	rpc/rpc_client.go:234	config-0-09c06f9f-831a-43a6-a3fe-a5f77af892d4 success to connect to server {serverIp:192.168.2.13 serverPort:8848 serverGrpcPort:9848} on start up, connectionId=1697793539142_172.18.0.1_42044
+2023-11-05T17:16:44.805+0800	DEBUG	rpc/rpc_client.go:290	config-0-fe360474-554c-48d1-817b-4668f50b41b4 register server push request:ConfigChangeNotifyRequest handler:ConfigChangeNotifyRequestHandler
+2023-11-05T17:16:44.805+0800	DEBUG	rpc/rpc_client.go:290	config-0-fe360474-554c-48d1-817b-4668f50b41b4 register server push request:ConnectResetRequest handler:ConnectResetRequestHandler
+2023-11-05T17:16:44.805+0800	DEBUG	rpc/rpc_client.go:290	config-0-fe360474-554c-48d1-817b-4668f50b41b4 register server push request:ClientDetectionRequest handler:ClientDetectionRequestHandler
+2023-11-05T17:16:44.805+0800	INFO	rpc/rpc_client.go:224	[RpcClient.Start] config-0-fe360474-554c-48d1-817b-4668f50b41b4 try to connect to server on start up, server: {serverIp:192.168.1.16 serverPort:8848 serverGrpcPort:9848}
+2023-11-05T17:16:44.807+0800	INFO	util/common.go:96	Local IP:192.168.1.16
+2023-11-05T17:16:44.934+0800	INFO	rpc/rpc_client.go:234	config-0-fe360474-554c-48d1-817b-4668f50b41b4 success to connect to server {serverIp:192.168.1.16 serverPort:8848 serverGrpcPort:9848} on start up, connectionId=1699175804823_192.168.65.1_20031
+2023-11-05T17:35:47.717+0800	DEBUG	rpc/rpc_client.go:290	config-0-5c0fe79e-facd-4f9a-82c9-2baed3aba7e6 register server push request:ConfigChangeNotifyRequest handler:ConfigChangeNotifyRequestHandler
+2023-11-05T17:35:47.719+0800	DEBUG	rpc/rpc_client.go:290	config-0-5c0fe79e-facd-4f9a-82c9-2baed3aba7e6 register server push request:ConnectResetRequest handler:ConnectResetRequestHandler
+2023-11-05T17:35:47.719+0800	DEBUG	rpc/rpc_client.go:290	config-0-5c0fe79e-facd-4f9a-82c9-2baed3aba7e6 register server push request:ClientDetectionRequest handler:ClientDetectionRequestHandler
+2023-11-05T17:35:47.719+0800	INFO	rpc/rpc_client.go:224	[RpcClient.Start] config-0-5c0fe79e-facd-4f9a-82c9-2baed3aba7e6 try to connect to server on start up, server: {serverIp:192.168.1.16 serverPort:8848 serverGrpcPort:9848}
+2023-11-05T17:35:47.719+0800	INFO	util/common.go:96	Local IP:192.168.1.16
+2023-11-05T17:35:47.839+0800	INFO	rpc/rpc_client.go:234	config-0-5c0fe79e-facd-4f9a-82c9-2baed3aba7e6 success to connect to server {serverIp:192.168.1.16 serverPort:8848 serverGrpcPort:9848} on start up, connectionId=1699176947736_192.168.65.1_21772
+2023-11-05T17:52:34.146+0800	DEBUG	rpc/rpc_client.go:290	config-0-f04b9154-fd15-48cd-af78-c5f6bfe9f3ad register server push request:ConfigChangeNotifyRequest handler:ConfigChangeNotifyRequestHandler
+2023-11-05T17:52:34.146+0800	DEBUG	rpc/rpc_client.go:290	config-0-f04b9154-fd15-48cd-af78-c5f6bfe9f3ad register server push request:ConnectResetRequest handler:ConnectResetRequestHandler
+2023-11-05T17:52:34.146+0800	DEBUG	rpc/rpc_client.go:290	config-0-f04b9154-fd15-48cd-af78-c5f6bfe9f3ad register server push request:ClientDetectionRequest handler:ClientDetectionRequestHandler
+2023-11-05T17:52:34.146+0800	INFO	rpc/rpc_client.go:224	[RpcClient.Start] config-0-f04b9154-fd15-48cd-af78-c5f6bfe9f3ad try to connect to server on start up, server: {serverIp:192.168.1.16 serverPort:8848 serverGrpcPort:9848}
+2023-11-05T17:52:34.147+0800	INFO	util/common.go:96	Local IP:192.168.1.16
+2023-11-05T17:52:34.269+0800	INFO	rpc/rpc_client.go:234	config-0-f04b9154-fd15-48cd-af78-c5f6bfe9f3ad success to connect to server {serverIp:192.168.1.16 serverPort:8848 serverGrpcPort:9848} on start up, connectionId=1699177954160_192.168.65.1_23314
+2023-11-25T11:48:59.825+0800	DEBUG	rpc/rpc_client.go:290	config-0-b0f59441-8ed1-41f9-8dfb-f1a28558f81d register server push request:ConfigChangeNotifyRequest handler:ConfigChangeNotifyRequestHandler
+2023-11-25T11:48:59.826+0800	DEBUG	rpc/rpc_client.go:290	config-0-b0f59441-8ed1-41f9-8dfb-f1a28558f81d register server push request:ConnectResetRequest handler:ConnectResetRequestHandler
+2023-11-25T11:48:59.826+0800	DEBUG	rpc/rpc_client.go:290	config-0-b0f59441-8ed1-41f9-8dfb-f1a28558f81d register server push request:ClientDetectionRequest handler:ClientDetectionRequestHandler
+2023-11-25T11:48:59.826+0800	INFO	rpc/rpc_client.go:224	[RpcClient.Start] config-0-b0f59441-8ed1-41f9-8dfb-f1a28558f81d try to connect to server on start up, server: {serverIp:192.168.1.16 serverPort:8848 serverGrpcPort:9848}
+2023-11-25T11:48:59.827+0800	INFO	util/common.go:96	Local IP:192.168.1.16
+2023-11-25T11:48:59.831+0800	WARN	rpc/rpc_client.go:226	[RpcClient.Start] config-0-b0f59441-8ed1-41f9-8dfb-f1a28558f81d fail to connect to server on start up, error message=server check request failed , err:rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp 192.168.1.16:9848: connect: connection refused", start up retry times left=2
+2023-11-25T11:48:59.831+0800	INFO	rpc/rpc_client.go:224	[RpcClient.Start] config-0-b0f59441-8ed1-41f9-8dfb-f1a28558f81d try to connect to server on start up, server: {serverIp:192.168.1.16 serverPort:8848 serverGrpcPort:9848}
+2023-11-25T11:48:59.833+0800	WARN	rpc/rpc_client.go:226	[RpcClient.Start] config-0-b0f59441-8ed1-41f9-8dfb-f1a28558f81d fail to connect to server on start up, error message=server check request failed , err:rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp 192.168.1.16:9848: connect: connection refused", start up retry times left=1
+2023-11-25T11:48:59.833+0800	INFO	rpc/rpc_client.go:224	[RpcClient.Start] config-0-b0f59441-8ed1-41f9-8dfb-f1a28558f81d try to connect to server on start up, server: {serverIp:192.168.1.16 serverPort:8848 serverGrpcPort:9848}
+2023-11-25T11:48:59.833+0800	WARN	rpc/rpc_client.go:226	[RpcClient.Start] config-0-b0f59441-8ed1-41f9-8dfb-f1a28558f81d fail to connect to server on start up, error message=server check request failed , err:rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp 192.168.1.16:9848: connect: connection refused", start up retry times left=0
+2023-11-25T11:48:59.833+0800	INFO	rpc/rpc_client.go:322	config-0-b0f59441-8ed1-41f9-8dfb-f1a28558f81d try to re connect to a new server, server is not appointed, will choose a random server.
+2023-11-25T11:48:59.833+0800	ERROR	rpc/rpc_client.go:522	Send request fail, request=ConfigQueryRequest, body={"requestId":"","group":"DEFAULT_GROUP","dataId":"account_dev.json","tenant":"ef612d04-5674-4f0d-911f-c91e534d3b47","module":"config","tag":""}, retryTimes=0, error=client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	/Users/max/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/common/remote/rpc/rpc_client.go:487
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).requestProxy
+	/Users/max/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/clients/config_client/config_proxy.go:64
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).queryConfig
+	/Users/max/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/clients/config_client/config_proxy.go:116
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).getConfigInner
+	/Users/max/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/clients/config_client/config_client.go:204
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).GetConfig
+	/Users/max/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/clients/config_client/config_client.go:148
+ocean_mall/account/internal.initFromNacos
+	/Users/max/Documents/coding/Backend/Golang/Personal/Go-Ocean-Mall/account/internal/vipper.go:63
+ocean_mall/account/internal.init.1
+	/Users/max/Documents/coding/Backend/Golang/Personal/Go-Ocean-Mall/account/internal/vipper.go:23
+runtime.doInit1
+	/usr/local/go/src/runtime/proc.go:6740
+runtime.doInit
+	/usr/local/go/src/runtime/proc.go:6707
+runtime.main
+	/usr/local/go/src/runtime/proc.go:249
+runtime.goexit
+	/usr/local/go/src/runtime/asm_arm64.s:1197
+2023-11-25T11:48:59.834+0800	WARN	rpc/rpc_client.go:353	config-0-b0f59441-8ed1-41f9-8dfb-f1a28558f81d fail to connect server, after trying 1 times, last try server is {serverIp:192.168.1.16 serverPort:8848 serverGrpcPort:9848}, error=server check request failed , err:rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp 192.168.1.16:9848: connect: connection refused"
+2023-11-25T11:48:59.934+0800	ERROR	rpc/rpc_client.go:522	Send request fail, request=ConfigQueryRequest, body={"requestId":"","group":"DEFAULT_GROUP","dataId":"account_dev.json","tenant":"ef612d04-5674-4f0d-911f-c91e534d3b47","module":"config","tag":""}, retryTimes=1, error=client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	/Users/max/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/common/remote/rpc/rpc_client.go:487
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).requestProxy
+	/Users/max/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/clients/config_client/config_proxy.go:64
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).queryConfig
+	/Users/max/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/clients/config_client/config_proxy.go:116
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).getConfigInner
+	/Users/max/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/clients/config_client/config_client.go:204
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).GetConfig
+	/Users/max/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/clients/config_client/config_client.go:148
+ocean_mall/account/internal.initFromNacos
+	/Users/max/Documents/coding/Backend/Golang/Personal/Go-Ocean-Mall/account/internal/vipper.go:63
+ocean_mall/account/internal.init.1
+	/Users/max/Documents/coding/Backend/Golang/Personal/Go-Ocean-Mall/account/internal/vipper.go:23
+runtime.doInit1
+	/usr/local/go/src/runtime/proc.go:6740
+runtime.doInit
+	/usr/local/go/src/runtime/proc.go:6707
+runtime.main
+	/usr/local/go/src/runtime/proc.go:249
+runtime.goexit
+	/usr/local/go/src/runtime/asm_arm64.s:1197
+2023-11-25T11:48:59.935+0800	WARN	rpc/rpc_client.go:353	config-0-b0f59441-8ed1-41f9-8dfb-f1a28558f81d fail to connect server, after trying 2 times, last try server is {serverIp:192.168.1.16 serverPort:8848 serverGrpcPort:9848}, error=server check request failed , err:rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp 192.168.1.16:9848: connect: connection refused"
+2023-11-25T11:49:00.035+0800	ERROR	rpc/rpc_client.go:522	Send request fail, request=ConfigQueryRequest, body={"requestId":"","group":"DEFAULT_GROUP","dataId":"account_dev.json","tenant":"ef612d04-5674-4f0d-911f-c91e534d3b47","module":"config","tag":""}, retryTimes=2, error=client not connected, current status:STARTING
+github.com/nacos-group/nacos-sdk-go/v2/common/remote/rpc.(*RpcClient).Request
+	/Users/max/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/common/remote/rpc/rpc_client.go:487
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).requestProxy
+	/Users/max/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/clients/config_client/config_proxy.go:64
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigProxy).queryConfig
+	/Users/max/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/clients/config_client/config_proxy.go:116
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).getConfigInner
+	/Users/max/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/clients/config_client/config_client.go:204
+github.com/nacos-group/nacos-sdk-go/v2/clients/config_client.(*ConfigClient).GetConfig
+	/Users/max/go/pkg/mod/github.com/nacos-group/nacos-sdk-go/v2@v2.2.3/clients/config_client/config_client.go:148
+ocean_mall/account/internal.initFromNacos
+	/Users/max/Documents/coding/Backend/Golang/Personal/Go-Ocean-Mall/account/internal/vipper.go:63
+ocean_mall/account/internal.init.1
+	/Users/max/Documents/coding/Backend/Golang/Personal/Go-Ocean-Mall/account/internal/vipper.go:23
+runtime.doInit1
+	/usr/local/go/src/runtime/proc.go:6740
+runtime.doInit
+	/usr/local/go/src/runtime/proc.go:6707
+runtime.main
+	/usr/local/go/src/runtime/proc.go:249
+runtime.goexit
+	/usr/local/go/src/runtime/asm_arm64.s:1197
+2023-11-25T11:49:00.136+0800	ERROR	config_client/config_client.go:207	get config from server error:client not connected, current status:STARTING, dataId=account_dev.json, group=DEFAULT_GROUP, namespaceId=ef612d04-5674-4f0d-911f-c91e534d3b47
+2023-11-25T11:49:00.136+0800	WARN	rpc/rpc_client.go:353	config-0-b0f59441-8ed1-41f9-8dfb-f1a28558f81d fail to connect server, after trying 3 times, last try server is {serverIp:192.168.1.16 serverPort:8848 serverGrpcPort:9848}, error=server check request failed , err:rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp 192.168.1.16:9848: connect: connection refused"
+2023-11-25T11:49:00.137+0800	WARN	config_client/config_client.go:220	read config from cache success, dataId=account_dev.json, group=DEFAULT_GROUP, namespaceId=ef612d04-5674-4f0d-911f-c91e534d3b47

@@ -3,7 +3,7 @@ package _jwt
 import (
 	"errors"
 	"github.com/golang-jwt/jwt/v5"
-	"ocean_mall/account/internal"
+	"ocean_mall/product/internal"
 	account_log "ocean_mall/account/log"
 	"time"
 )

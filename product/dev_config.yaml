@@ -1,9 +1,9 @@
 nacos:
   host: "192.168.1.16"
   port: 8848
-  namespace: "4136c76d-baa9-4027-b4af-be34737a9e5f"
-  dataId: "account_dev.json"
-  group: "developer"
+  namespace: "5bdbc99f-118a-4f5d-a7ea-e77f27aeb0d9"
+  dataId: "product_srv"
+  group: "DEFAULT_GROUP"
 #jwt:
 #  sign_key: "Elian"
 #

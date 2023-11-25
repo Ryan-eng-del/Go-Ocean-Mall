@@ -2,14 +2,15 @@ package internal
 
 import (
 	"fmt"
+	"log"
+	"ocean_mall/product/product_srv/model"
+	"os"
+	"time"
+
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 	"gorm.io/gorm/schema"
-	"log"
-	"ocean_mall/account/account_srv/model"
-	"os"
-	"time"
 )
 
 var DB *gorm.DB
@@ -45,9 +46,8 @@ func InitDB() {
 		panic("数据库连接失败" + err.Error())
 	}
 
-	err = DB.AutoMigrate(&model.Account{})
+	err = DB.AutoMigrate(&model.Advertise{}, &model.Brand{}, &model.Category{}, &model.Product{})
 	if err != nil {
 		fmt.Println(err)
 	}
-
 }

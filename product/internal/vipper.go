@@ -3,6 +3,7 @@ package internal
 import (
 	"encoding/json"
 	"fmt"
+
 	"github.com/nacos-group/nacos-sdk-go/v2/clients"
 	"github.com/nacos-group/nacos-sdk-go/v2/common/constant"
 	"github.com/nacos-group/nacos-sdk-go/v2/vo"
@@ -74,7 +75,7 @@ type ViperConfig struct {
 	RedisConfig    RedisConfig    `mapstructure:"redis" json:"redis"`
 	ConsulConfig   ConsulConfig   `mapstructure:"consul" json:"consul"`
 	DBConfig       DBConfig       `mapstructure:"mysql" json:"mysql"`
-	AccountSrvConf AccountSrvConf `mapstructure:"account_srv" json:"account_srv"`
-	AccountWebConf AccountWebConf `mapstructure:"account_web" json:"account_web"`
+	ProductSrvConf ProductSrvConf `mapstructure:"product_srv" json:"product_srv"`
+	ProductWebConf ProductWebConf `mapstructure:"product_web" json:"product_web"`
 	JWTConfig      JWTConfig      `mapstructure:"jwt" json:"jwt"`
 }

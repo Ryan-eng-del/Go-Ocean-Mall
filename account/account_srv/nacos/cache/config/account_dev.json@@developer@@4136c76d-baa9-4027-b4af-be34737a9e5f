@@ -3,7 +3,7 @@
         "sign_key": "Elian"
     },
     "consul": {
-        "host": "192.168.2.13",
+        "host": "192.168.1.16",
         "port": 8500
     },
     "redis": {
@@ -19,7 +19,7 @@
     },
     "account_web": {
         "srvName": "account_web",
-        "host": "192.168.2.13",
+        "host": "192.168.1.16",
         "port": "8085",
         "tags": [
             "ocean_mall",
@@ -28,7 +28,7 @@
     },
     "account_srv": {
         "srvName": "account_srv",
-        "host": "192.168.2.13",
+        "host": "192.168.1.16",
         "port": "9095",
         "tags": [
             "ocean_mall",

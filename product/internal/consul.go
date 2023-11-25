@@ -2,9 +2,9 @@ package internal
 
 import (
 	"fmt"
+	"strconv"
 	"github.com/google/uuid"
 	"github.com/hashicorp/consul/api"
-	"strconv"
 )
 
 type ConsulConfig struct {
@@ -12,14 +12,14 @@ type ConsulConfig struct {
 	Port int    `mapstructure:"port" json:"port"`
 }
 
-type AccountSrvConf struct {
+type ProductSrvConf struct {
 	Host    string   `mapstructure:"host" json:"host"`
 	Port    string   `mapstructure:"port" json:"port"`
 	SrvName string   `mapstructure:"srvName" json:"srvName"`
 	Tags    []string `mapstructure:"tags" json:"tags"`
 }
 
-type AccountWebConf struct {
+type ProductWebConf struct {
 	Host    string   `mapstructure:"host" json:"host"`
 	Port    string   `mapstructure:"port" json:"port"`
 	SrvName string   `mapstructure:"srvName" json:"srvName"`

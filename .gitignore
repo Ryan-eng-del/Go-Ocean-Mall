@@ -129,3 +129,5 @@ Tools/ssl/win32
 !/Python/
 volumes*
 /*.log
+docker/nacos-docker*
+nacos*
